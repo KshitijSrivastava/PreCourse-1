@@ -60,6 +60,16 @@ class SinglyLinkedList:
         Remove the first occurrence of `key` in the list.
         Takes O(n) time.
         """
+        #When the list is empty
+        if self.isEmpty():
+            return None
+        
+        #When only one node is present 
+        if self.head.next is None:
+            node = self.head
+            self.head = None
+            return node
+
         #Taking two pointers, one points to the previous node and one points to current node
         prev = None
         temp = self.head
